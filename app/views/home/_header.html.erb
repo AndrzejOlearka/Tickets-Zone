@@ -1,14 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Tickets Zone</a>
+  <%= link_to 'Tickets Zone', root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-    </ul>
+    <% if user_signed_in? %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tickets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Integrations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+      </ul>  
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        </li>
+      </ul>   
+    <% else %>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to 'Register', new_user_registration_path, class: "btn btn-primary mr-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %>
+        </li>
+      </ul>    
+    <% end %>
+   
   </div>
 </nav>
