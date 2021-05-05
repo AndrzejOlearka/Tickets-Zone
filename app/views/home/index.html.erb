@@ -1,2 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Integration</th>
+      <th scope="col">Ticket ID</th>
+      <th scope="col">Ticket Created</th>
+      <th scope="col">Ticket Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @article_votes.each do |ticket| %>
+      <tr>
+        <td>Freshdesk</td>
+        <td><%= ticket['id'] %></td>
+        <td><%= formatIsoDate(ticket['created_at']) %></td>
+        <td><%= ticket['subject'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<pre>
+  <%= @article_votes.inspect %>
+</pre>

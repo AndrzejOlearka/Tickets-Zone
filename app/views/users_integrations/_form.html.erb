@@ -1,0 +1,57 @@
+<%= form_with(model: users_integration) do |form| %>
+  <% if users_integration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(users_integration.errors.count, "error") %> prohibited this users_integration from being saved:</h2>
+
+      <ul>
+        <% users_integration.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :integration_id %>
+    <%= form.number_field :integration_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uri %>
+    <%= form.text_field :uri %>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_area :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :options %>
+    <%= form.text_area :options %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

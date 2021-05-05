@@ -1,0 +1,2 @@
+class UsersIntegration < ApplicationRecord
+end

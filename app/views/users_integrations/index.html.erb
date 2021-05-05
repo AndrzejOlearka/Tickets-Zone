@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users Integrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Integration</th>
+      <th>User</th>
+      <th>Name</th>
+      <th>Uri</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Options</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users_integrations.each do |users_integration| %>
+      <tr>
+        <td><%= users_integration.id %></td>
+        <td><%= users_integration.integration_id %></td>
+        <td><%= users_integration.user_id %></td>
+        <td><%= users_integration.name %></td>
+        <td><%= users_integration.uri %></td>
+        <td><%= users_integration.username %></td>
+        <td><%= users_integration.password %></td>
+        <td><%= users_integration.options %></td>
+        <td><%= link_to 'Show', users_integration %></td>
+        <td><%= link_to 'Edit', edit_users_integration_path(users_integration) %></td>
+        <td><%= link_to 'Destroy', users_integration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Users Integration', new_users_integration_path %>

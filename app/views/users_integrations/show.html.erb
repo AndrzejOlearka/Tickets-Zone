@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @users_integration.id %>
+</p>
+
+<p>
+  <strong>Integration:</strong>
+  <%= @users_integration.integration_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @users_integration.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @users_integration.name %>
+</p>
+
+<p>
+  <strong>Uri:</strong>
+  <%= @users_integration.uri %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @users_integration.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @users_integration.password %>
+</p>
+
+<p>
+  <strong>Options:</strong>
+  <%= @users_integration.options %>
+</p>
+
+<%= link_to 'Edit', edit_users_integration_path(@users_integration) %> |
+<%= link_to 'Back', users_integrations_path %>
