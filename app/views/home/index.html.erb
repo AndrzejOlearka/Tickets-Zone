@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @article_votes.each do |ticket| %>
+    <% @tickets.each do |ticket| %>
       <tr>
         <td>Freshdesk</td>
         <td><%= ticket['id'] %></td>
@@ -20,5 +20,5 @@
 </table>
 
 <pre>
-  <%= @article_votes.inspect %>
+  <%= @tickets.inspect %>
 </pre>

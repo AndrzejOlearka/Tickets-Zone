@@ -1,44 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id:</strong>
-  <%= @users_integration.id %>
-</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" colspan="2" class="text-center"><%= @users_integration.name %> (<%= @users_integration.integration.name %>)</th><tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Integration Name:</td><td><%= @users_integration.name %></td>
+    </tr>
+    <tr>
+      <td>Integration Type:</td><td><%= @users_integration.integration.name %></td>
+    </tr>
+        <tr>
+      <td>Integration URI:</td><td><%= @users_integration.uri %></td>
+    </tr>
+        <tr>
+      <td>Integration Username:</td><td><%= @users_integration.username %></td>
+    </tr>
+        <tr>
+      <td>Integration Password:</td><td><%= @users_integration.password %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Integration:</strong>
-  <%= @users_integration.integration_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @users_integration.user_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @users_integration.name %>
-</p>
-
-<p>
-  <strong>Uri:</strong>
-  <%= @users_integration.uri %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @users_integration.username %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @users_integration.password %>
-</p>
-
-<p>
-  <strong>Options:</strong>
-  <%= @users_integration.options %>
-</p>
 
 <%= link_to 'Edit', edit_users_integration_path(@users_integration) %> |
 <%= link_to 'Back', users_integrations_path %>

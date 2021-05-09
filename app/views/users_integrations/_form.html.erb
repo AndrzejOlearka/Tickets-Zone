@@ -1,3 +1,4 @@
+<div class="panel w-50 mx-auto">
 <%= form_with(model: users_integration) do |form| %>
   <% if users_integration.errors.any? %>
     <div id="error_explanation">
@@ -11,47 +12,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :id %>
-    <%= form.text_field :id %>
+  <div class="form-group">
+     <%= form.label :integration_id, class: "font-weight-bold" %><br />
+    <%= form.collection_select :integration_id, @integrations, :id, :name, {:prompt => "Select an integration"}, {:class=>"form-control"} %>
   </div>
 
-  <div class="field">
-    <%= form.label :integration_id %>
-    <%= form.number_field :integration_id %>
+  <div class="form-group">
+    <%= form.label :name, class: "font-weight-bold" %><br />
+    <%= form.text_field :name, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+  <div class="form-group">
+    <%= form.label :uri, class: "font-weight-bold" %><br />
+    <%= form.text_field :uri, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :username, class: "font-weight-bold" %><br />
+    <%= form.text_field :username, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :uri %>
-    <%= form.text_field :uri %>
+  <div class="form-group">
+    <%= form.label :password, class: "font-weight-bold" %><br />
+    <%= form.password_field :password, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <div class="form-group">
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_area :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :options %>
-    <%= form.text_area :options %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions text-center">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+</div>

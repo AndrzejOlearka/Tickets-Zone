@@ -13,6 +13,7 @@ class UsersIntegrationsController < ApplicationController
   # GET /users_integrations/new
   def new
     @users_integration = UsersIntegration.new
+    @integrations = Integration.all
   end
 
   # GET /users_integrations/1/edit
@@ -64,6 +65,6 @@ class UsersIntegrationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def users_integration_params
-      params.require(:users_integration).permit(:id, :integration_id, :user_id, :name, :uri, :username, :password, :options)
+      params.require(:users_integration).permit(:integration_id, :user_id, :name, :uri, :username, :password, )
     end
 end

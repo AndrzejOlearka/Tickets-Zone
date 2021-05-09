@@ -1,41 +1,32 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="alert alert-success hidden"><%= notice %></p>
 
-<h1>Users Integrations</h1>
+<div class="text-center mb-3">
+<%= link_to 'Add Integration', new_users_integration_path, class: "btn btn-primary" %>
+</div>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Id</th>
-      <th>Integration</th>
-      <th>User</th>
-      <th>Name</th>
-      <th>Uri</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Options</th>
-      <th colspan="3"></th>
+      <th scope="col">ID</th>
+      <th scope="col">Integration Name</th>
+      <th scope="col">Integration Type</th>
+      <th scope="col">Integration URI</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
-
   <tbody>
     <% @users_integrations.each do |users_integration| %>
       <tr>
         <td><%= users_integration.id %></td>
-        <td><%= users_integration.integration_id %></td>
-        <td><%= users_integration.user_id %></td>
         <td><%= users_integration.name %></td>
+        <td><%= users_integration.integration.name %></td>
         <td><%= users_integration.uri %></td>
-        <td><%= users_integration.username %></td>
-        <td><%= users_integration.password %></td>
-        <td><%= users_integration.options %></td>
-        <td><%= link_to 'Show', users_integration %></td>
-        <td><%= link_to 'Edit', edit_users_integration_path(users_integration) %></td>
-        <td><%= link_to 'Destroy', users_integration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="text-center">
+          <%= link_to 'Show', users_integration, class: "btn btn-success"%>
+          <%= link_to 'Edit', edit_users_integration_path(users_integration), class: "btn btn-primary" %>
+          <%= link_to 'Destroy', users_integration, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Users Integration', new_users_integration_path %>
