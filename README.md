@@ -1,24 +1,18 @@
-# README
+# TICKETS ZONE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ABOUT
 
-Things you may want to cover:
+This is small application that allows users to synchronize tickets (cases/solutions in other nomenclature) from:
+* Zendesk
+* Freshdesk
+* Kayako
 
-* Ruby version
+## MILESTONES
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby basic syntax including OOP
+* **Rails** framework:
+ - Rails MVC concept
+ - **Active Record** && **Sqlite**
+ - Jobs using **Wheneverize** gem
+ - Getting data from APIs using **HTTParty** gem
+ - **Devise** Gem basics
