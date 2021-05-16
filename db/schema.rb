@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_05_192738) do
+ActiveRecord::Schema.define(version: 2021_05_15_172016) do
 
   create_table "integrations", force: :cascade do |t|
     t.string "name"
@@ -20,16 +20,17 @@ ActiveRecord::Schema.define(version: 2021_05_05_192738) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "user_integration_id"
+    t.integer "users_integration_id"
     t.integer "unique_id"
     t.string "subject"
     t.string "department"
     t.string "priority"
+    t.string "status"
     t.datetime "created"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"integration_id\"", name: "index_tickets_on_user_integration_id"
     t.index ["user_id"], name: "index_tickets_on_user_id"
+    t.index ["users_integration_id"], name: "index_tickets_on_users_integration_id"
   end
 
   create_table "users", force: :cascade do |t|
